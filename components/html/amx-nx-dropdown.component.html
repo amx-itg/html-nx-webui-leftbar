@@ -1,0 +1,9 @@
+<div class="row mb-3">
+
+    <div ng-class="{'form-floating':config.label.floating}" id="{{'parent_' + id}}">
+        <label for="{{id}}" class="form-label" ng-if="!config.label.floating && config.label.show">{{config.label.text}}</label>
+        <select class="form-select" id="{{id}}" aria-label="{{config.label.text}}" ng-model="selected" ng-options="item.label group by item.group for item in options">
+        </select>
+        <label for="{{id}}" class="form-label" ng-if="config.label.floating && config.label.show">{{config.label.text}}</label>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="row {{justify}}" id="{{id}}">
+    <div class="d-flex justify-content-between">
+        <label for="{{id + '_range'}}" class="form-label" ng-class="{'visually-hidden':!showTitle}">{{title}}</label>
+        <span class="text-small" id="{{id + '_gauge'}}">
+          {{currentValue}}
+        </span>
+    </div>
+    <input id="{{id + '_range'}}" type="range"  class="form-range" min="{{min}}" max="{{max}}" step="{{step}}" value="{{initValue}}">
+ </div>

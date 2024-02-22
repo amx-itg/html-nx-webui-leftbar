@@ -1,0 +1,117 @@
+<div>
+    <div id="{{id + '_alert'}}"></div>
+    <div class="row {{titlePOS}}" ng-if="showTitle">
+        <h4 class="card-title">{{title}}</h4>
+    </div>
+    <div ng-switch="type">
+        <div ng-switch-default>
+            <div class="row justify-content-between px-2 g-1">
+                <div class="col-sm-9 col-md-8 col-lg-8 align-items-center text-center mb-3 me-sm-0 ">
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="col-2">
+                            <button type="button" id="{{'camUp_' + id}}" class="btn btn-primary btn-lg">
+                                <span class="visually-hidden">Camera Up</span>
+                                <i class="mdi mdi-chevron-up mdi-24px"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class=" d-flex justify-content-between align-content-middle mb-4">
+                        <div class="col-2">
+                            <button type="button" id="{{'camLeft_' + id}}" class="btn btn-primary btn-lg">
+                                <span class="visually-hidden">Camera Left</span>
+                                <i class="mdi mdi-chevron-left mdi-24px"></i>
+
+                            </button>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" id="{{'camRight_' + id}}" class="btn btn-primary btn-lg">
+                                <span class="visually-hidden">Camera Right</span>
+                                <i class="mdi mdi-chevron-right mdi-24px"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="col-2">
+                            <button type="button" id="{{'camDown_' + id}}"  class="btn btn-primary btn-lg">
+                                <span class="visually-hidden">Camera Down</span>
+                                <i class="mdi mdi-chevron-down mdi-24px"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-2 d-flex flex-column justify-content-between">
+                    <button type="button" id="{{'zoomIn_' + id}}" class="btn btn-primary btn-lg mb-3">
+                        <span class="visually-hidden">Zoom In</span>
+                        <i class="mdi mdi-plus mdi-24px"></i>
+                    </button>
+                    <span class="d-sm-block d-md-none mb-sm-3 text-center">
+                <h5>ZOOM</h5>
+            </span>
+                    <button type="button" id="{{'zoomOut_' + id}}" class="btn btn-primary btn-lg mb-3 mt-sm-2">
+                        <span class="visually-hidden">Zoom Out</span>
+                        <i class="mdi mdi-minus mdi-24px"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <div ng-switch-when="style1">
+            <div class="row">
+                <div class="col-9">
+                    <div class="row justify-content-between mb-sm-2">
+                        <div class="col-4 offset-4">
+                            <button type="button" class="btn btn-secondary btn-lg" id="{{'camUp_' + id}}">
+                                <i class="mdi mdi-chevron-up mdi-24px"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between mb-sm-2">
+                        <div class="col-4">
+                            <button type="button" class="btn btn-secondary btn-lg" id="{{'camLeft_' + id}}">
+                                <i class="mdi mdi-chevron-left mdi-24px"></i>
+                                <span class="visually-hidden">Camera Left</span>
+                            </button>
+                        </div>
+                        <div class="col-4 offset-4">
+                            <button type="button" class="btn btn-secondary btn-lg" id="{{'camRight_' + id}}">
+                                <i class="mdi mdi-chevron-right mdi-24px"></i>
+                                <span class="visually-hidden">Camera Right</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-4 offset-4">
+                            <button type="button" class="btn btn-secondary btn-lg" id="{{'camDown_' + id}}">
+                                <i class="mdi mdi-chevron-down mdi-24px"></i>
+                                <span class="visually-hidden">Camera Down</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex flex-column justify-content-around">
+                    <button type="button" class="btn btn-secondary btn-lg" id="{{'zoomIn_' + id}}">
+                        <i class="mdi mdi-plus mdi-24px"></i>
+                        <span class="visually-hidden">Zoom In</span>
+                    </button>
+                    <span class="card-text text-center">
+                        <i class="mdi mdi-magnify-plus mdi-18px d-block"></i>
+                        ZOOM
+                    </span>
+                    <button type="button" class="btn btn-secondary btn-lg" id="{{'zoomOut_' + id}}">
+                        <i class="mdi mdi-minus mdi-24px"></i>
+                        <span class="visually-hidden">Zoom In</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row {{presetPOS}}">
+        <button ng-repeat="btn in presets" class="btn btn-primary col-sm-3 col-md-3 col-lg-3 mb-1 me-1" id="{{'preset_' + $index + '_' + id}}">
+            {{btn.text}}
+        </button>
+    </div>
+
+</div>
+<i ng-init="loaded()"></i>

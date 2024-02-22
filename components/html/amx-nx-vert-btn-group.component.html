@@ -1,0 +1,7 @@
+<div class="d-grid" id="{{id}}">
+    <button ng-repeat="btn in btns" class="{{btn.class}}" id="{{btn.id}}" >
+        <i class="mdi {{btn.icon}} mdi-24px" ng-if="btn.showIcon"></i>
+        {{btn.label}}
+    </button>
+</div>
+<i ng-init="loaded()"></i>

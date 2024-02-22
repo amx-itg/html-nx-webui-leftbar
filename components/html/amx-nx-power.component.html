@@ -1,0 +1,70 @@
+<div ng-switch="mode">
+    <div ng-switch-when="discreet">
+        <div class="row {{margin}}">
+            <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-2 mb-sm-0 mb-md-0 mb-lg-0 d-flex justify-content-center justify-content-lg-start align-self-center" ng-if="showTitle">
+                {{name}}
+            </div>
+            <div class="col-sm-12 col-md-12 d-flex justify-content-center justify-content-lg-end" ng-class="{'col-lg-9 col-xl-9':showTitle,'col-lg-12 col-xl-12':!showTitle}">
+                <button type="button" class="btn btn-primary {{gutter}} {{padding}}" id="{{'power_on_' + id}}" aria-label="{{'Display ' + name + ' Power On'}}">
+                    <i class="mdi {{icons[0]}} mdi-24px" ng-if="showIcons"></i>
+                    {{label[0]}}
+                </button>
+                <button type="button" class="btn btn-secondary {{padding}}" id="{{'power_off_' + id}}" aria-label="{{'Display ' + name + ' Power Off'}}">
+                    <i class="mdi {{icons[1] || 'mdi-power'}} mdi-24px" ng-if="showIcons"></i>
+                    {{label[1] || 'Power Off'}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div ng-switch-when="toggle">
+        <div class="row {{margin}}">
+            <div class="col-sm-12 c-l-md-12 col-lg-3 col-xl-3 mb-0 d-flex justify-content-center justify-content-lg-start align-self-center" ng-if="showTitle">
+                {{name}}
+            </div>
+            <div class="col-sm-12 col-md-12 d-flex justify-content-center justify-content-lg-end" ng-class="{'col-lg-9 col-xl-9':showTitle,'col-lg-12 col-xl-12':!showTitle}">
+                <button type="button" class="btn btn-primary me-1 {{padding}}" id="{{'power_toggle_' + id}}" aria-label="{{'Display ' + name + ' Power Toggle'}}">
+                    <i class="mdi {{icons[0]}} mdi-24px" ng-if="showIcons"></i>
+                    <span ng-class={'visually-hidden':hideLabel}>{{label[0]}}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div ng-switch-when="sb-discreet">
+        <div class="row justify-content-start mb-1">
+            <span class="card-subtitle mb-1">{{name}}</span>
+        </div>
+        <div class="row justify-content-start g-2 mb-1">
+            <div class="col-6">
+                <button type="button" class="btn btn-primary p-2 rounded-0 w-100" id="{{'power_on_' + id}}" aria-label="{{'Display ' + name + ' Power On'}}">
+                    <i class="mdi {{icons[0]}} d-block mdi-36px" ng-if="showIcons"></i>
+                    {{label[0] || 'Power On'}}
+                </button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-primary p-2 rounded-0 w-100" id="{{'power_off_' + id}}" aria-label="{{'Display ' + name + ' Power Off'}}">
+                    <i class="mdi {{icons[1] || 'mdi-power'}}  d-block mdi-36px" ng-if="showIcons"></i>
+                    {{label[1] || 'Power Off'}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div ng-switch-when="sb-toggle">
+        <div class="row justify-content-start mb-1">
+            <span class="card-subtitle mb-1">{{name}}</span>
+        </div>
+        <div class="row justify-content-end mb-1">
+            <div class="col-6">
+                <button type="button" class="btn btn-primary p-2 rounded-0 w-100" id="{{'power_toggle_' + id}}" aria-label="{{'Display ' + name + ' Power Toggle'}}">
+                    <i class="mdi {{icons[0]}} d-block mdi-36px" ng-if="showIcons"></i>
+                    {{label[0] || 'Power Toggle'}}
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+

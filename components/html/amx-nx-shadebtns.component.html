@@ -1,0 +1,14 @@
+<div class="row w-100">
+    <span class="card-subtitle mb-1">{{title}}</span>
+</div>
+<div class="row">
+    <div class="col-4">
+        <div class="btn-group">
+            <button type="button" ng-repeat="btn in btns" class="btn {{'btn-' + btn.color}}" id="{{id + '_btn_' + $index}}">
+                <i class="mdi mdi-24px {{btn.icon}}"></i>
+                <span ng-class="{'visually-hidden':!showText}">{{btn.text}}</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div ng-init="loaded()"></div>

@@ -1,0 +1,33 @@
+<div class="row mb-1" ng-if="showTitle">
+    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 d-flex justify-content-center justify-content-lg-start align-self-center">
+        {{title}}
+    </div>
+</div>
+<div class="row justify-content-between g-0">
+    <div class="col-1 d-flex justify-content-center align-self-center">
+        <button type="button" id="{{'volDown_' + id}}" class="btn {{'btn-' + color}}">
+            <span class="visually-hidden">Volume Down</span>
+            <i id="{{'volDown_Icon_' + id}}" class="mdi mdi-volume-minus"></i>
+        </button>
+
+    </div>
+    <div class="col-7 d-flex justify-content-center align-self-center">
+        <label for="{{'vol_slider_' + id}}" class="visually-hidden">{{title + ' volume level'}}</label>
+        <input type="range" min="{{minLevel}}" max="{{maxLevel}}" data-nxval="0" step="{{stepLevel}}" class="form-range2 no-thumb" id="{{'vol_slider_' + id}}"  value="125" aria-valuemin="{{minLevel}}" aria-valuemax="{{maxLevel}}" aria-valuenow="">
+        <!-- todo: change to meter -->
+    </div>
+    <div class="col-1 d-flex justify-content-center align-self-center">
+
+        <button type="button" id="{{'volUp_' + id}}" name="volumeUp" class="btn {{'btn-' + color}}">
+            <span class="visually-hidden">Volume Up</span>
+            <i id="{{'volUp_Icon_' + id}}" class="mdi mdi-volume-plus"></i>
+        </button>
+    </div>
+    <div class="col-1 d-flex justify-content-center align-self-center">
+        <button type="button" id="{{'volMute_' + id}}" class="btn {{'btn-' + muteColor}}">
+            <span class="visually-hidden">Volume Mute</span>
+            <i id="{{'volMute_Icon_' + id}}" class="mdi mdi-volume-mute"></i>
+        </button>
+    </div>
+</div>
+

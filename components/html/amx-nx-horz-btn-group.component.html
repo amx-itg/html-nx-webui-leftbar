@@ -1,0 +1,6 @@
+<div class="row {{justify}} " id="{{id}}">
+    <button ng-repeat="btn in btns" class="{{btn.class}}" id="{{btn.id}}" ng-mousedown="btnEvent($index,'push')" ng-mouseup="btnEvent($index,'release')">
+        <i class="mdi {{btn.icon}}" ng-if="btn.showIcon"></i>
+        {{btn.label}}
+    </button>
+</div>
